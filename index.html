@@ -35,7 +35,19 @@ border-radius:15px;
 margin-top:20px;
 
 }
+button{
 
+padding:15px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+}
 </style>
 
 </head>
@@ -59,7 +71,67 @@ margin-top:20px;
 <p>🛠️ AdBlue bitti araç çalışmıyor</p>
 
 </div>
+<div class="kutu">
 
+<h2>Hızlı Çözüm</h2>
+
+<button onclick="cozum('aku')">
+
+🔋 Akü Sorunu
+
+</button>
+
+<button onclick="cozum('mars')">
+
+🚗 Marş Sorunu
+
+</button>
+
+<button onclick="cozum('jenerator')">
+
+⚡ Jeneratör
+
+</button>
+
+</div>
+
+<script>
+
+function cozum(tip){
+
+let sonuc=
+
+document.getElementById("sonuc");
+
+sonuc.style.display="block";
+
+if(tip=="aku"){
+
+sonuc.innerHTML=
+
+"🔋 Akü kutup başlarını kontrol et. Marş anında voltaj çok düşüyorsa akü zayıf olabilir.";
+
+}
+
+if(tip=="mars"){
+
+sonuc.innerHTML=
+
+"🚗 Tık tık sesi varsa marş rölesi veya akü kaynaklı olabilir.";
+
+}
+
+if(tip=="jenerator"){
+
+sonuc.innerHTML=
+
+"⚡ AVR, sigorta ve çıkış bağlantıları kontrol edilmeli.";
+
+}
+
+}
+
+</script>
 </body>
 
 </html>
