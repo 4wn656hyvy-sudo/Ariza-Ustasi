@@ -302,6 +302,49 @@ sonuc.innerHTML=
 }
 
 </script>
+  <div class="kutu">
+
+<h2>📩 Bize Arızanı Gönder</h2>
+
+<input
+
+type="text"
+
+placeholder="Sorununu yaz..."
+
+id="sorun"
+
+/>
+
+<button onclick="mesajGonder()">
+
+Gönder
+
+</button>
+
+</div>
+
+<script>
+
+function mesajGonder(){
+
+let yazi=
+
+document.getElementById("sorun").value;
+
+let sonuc=
+
+document.getElementById("sonuc");
+
+sonuc.style.display="block";
+
+sonuc.innerHTML=
+
+"✅ Mesaj alındı: " + yazi;
+
+}
+
+</script>
 </body>
 
 </html>
