@@ -42,41 +42,45 @@ color:white;
 
 text-decoration:none;
 
+font-size:18px;
+
 }
 
 button{
 
 padding:12px;
 
-margin-top:10px;
-
 border:none;
 
 border-radius:10px;
 
+margin-top:10px;
+
 }
 
-input{
+input,select{
 
 width:90%;
 
 padding:12px;
 
+border:none;
+
 border-radius:10px;
 
-border:none;
+margin-top:10px;
 
 }
 
 #sonuc{
 
-margin-top:15px;
+background:#333;
 
 padding:15px;
 
-background:#333;
-
 border-radius:10px;
+
+margin-top:20px;
 
 display:none;
 
@@ -102,11 +106,17 @@ display:none;
 
 <h1>🔧 Arıza Ustası</h1>
 
+<h3>Türkiye'nin araç ve arıza çözüm rehberi</h3>
+
 <div class="kutu">
 
 <h2>Hoş Geldin 👋</h2>
 
-<p>Arızanı yaz veya aşağıdaki konulardan seç.</p>
+<p>
+
+Arızanı yaz, belirti seç veya popüler sorunlardan birine dokun.
+
+</p>
 
 </div>
 
@@ -114,11 +124,15 @@ display:none;
 
 id="arama"
 
-placeholder="Örnek: akü"
-
-onkeyup="ara()"
+placeholder="Örnek: akü, jeneratör, tık"
 
 />
+
+<button onclick="ara()">
+
+Ara
+
+</button>
 
 <div id="sonuc"></div>
 
@@ -126,21 +140,73 @@ onkeyup="ara()"
 
 <h3>Popüler Sorunlar</h3>
 
-<p><a href="tik-tik-sesi.html">🚗 Marş basıyor tık tık sesi</a></p>
+<p>
 
-<p><a href="aku-calismiyor.html">🔋 Akü var araç çalışmıyor</a></p>
+<a href="tik-tik-sesi.html">
 
-<p><a href="dizel-gec-calisiyor.html">🚘 Dizel araç geç çalışıyor</a></p>
+🚗 Marş basıyor tık tık sesi
 
-<p><a href="adblue-sorunu.html">🛠️ AdBlue sorunu</a></p>
+</a>
+
+</p>
+
+<p>
+
+<a href="aku-calismiyor.html">
+
+🔋 Akü var araç çalışmıyor
+
+</a>
+
+</p>
+
+<p>
+
+<a href="dizel-gec-calisiyor.html">
+
+🚘 Dizel araç geç çalışıyor
+
+</a>
+
+</p>
+
+<p>
+
+<a href="adblue-sorunu.html">
+
+🛠️ AdBlue sorunu
+
+</a>
+
+</p>
 
 </div>
 
 <div class="kutu">
 
-<h2>📩 Arızanı Gönder</h2>
+<h2>📂 Kategoriler</h2>
 
-<input id="sorun" placeholder="Sorununu yaz">
+<p>🚗 Araç Arızaları</p>
+
+<p>⚡ Jeneratör Sorunları</p>
+
+<p>🔋 Akü ve Marş Problemleri</p>
+
+<p>🔌 Elektrik Arızaları</p>
+
+</div>
+
+<div class="kutu">
+
+<h2>📩 Bize Arızanı Gönder</h2>
+
+<input
+
+id="sorun"
+
+placeholder="Sorununu yaz"
+
+/>
 
 <button onclick="mesajGonder()">
 
@@ -164,17 +230,37 @@ let sonuc=
 
 document.getElementById("sonuc");
 
-if(yazi.includes("akü")){
-
 sonuc.style.display="block";
+
+if(yazi.includes("akü")){
 
 sonuc.innerHTML=
 
-"🔋 Akü bağlantıları ve voltaj kontrol edilmeli.";
+"🔋 Akü kutup başlarını ve voltajı kontrol et.";
 
-}else{
+}
 
-sonuc.style.display="none";
+else if(yazi.includes("tık")){
+
+sonuc.innerHTML=
+
+"🚗 Akü zayıf veya marş rölesi arızalı olabilir.";
+
+}
+
+else if(yazi.includes("jeneratör")){
+
+sonuc.innerHTML=
+
+"⚡ AVR ve sigortaları kontrol et.";
+
+}
+
+else{
+
+sonuc.innerHTML=
+
+"🔧 Sonuç bulunamadı.";
 
 }
 
@@ -186,7 +272,7 @@ let yazi=
 
 document.getElementById("sorun").value;
 
-alert("Mesaj alındı: "+yazi);
+alert("Mesaj alındı: " + yazi);
 
 }
 
