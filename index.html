@@ -326,21 +326,11 @@ Gönder
 
 <script>
 
-function mesajGonder(){
+function mesajGonder() {
 
-let yazi=
+let yazi = document.getElementById("sorun").value;
 
-document.getElementById("sorun").value;
-
-let sonuc=
-
-document.getElementById("sonuc");
-
-sonuc.style.display="block";
-
-sonuc.innerHTML=
-
-"✅ Mesaj alındı: " + yazi;
+alert("Mesaj alındı: " + yazi);
 
 }
 
