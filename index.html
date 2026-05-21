@@ -7,36 +7,24 @@
 <title>Arıza Ustası</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-select{
 
-width:90%;
-
-padding:15px;
-
-border-radius:10px;
-
-font-size:18px;
-
-margin-top:15px;
-
-}
 <style>
 
 body{
-
-font-family:Arial;
 
 background:#111;
 
 color:white;
 
-text-align:center;
+font-family:Arial;
 
-padding:40px;
+padding:20px;
+
+text-align:center;
 
 }
 
-.box{
+.kutu{
 
 background:#222;
 
@@ -47,35 +35,59 @@ border-radius:15px;
 margin-top:20px;
 
 }
-button{
 
-padding:15px;
-
-margin:10px;
-
-border:none;
-
-border-radius:10px;
-
-font-size:16px;
-
-}
-  a{
+a{
 
 color:white;
 
 text-decoration:none;
 
-font-size:18px;
+}
 
-padding:10px;
+button{
+
+padding:12px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:10px;
 
 }
+
+input{
+
+width:90%;
+
+padding:12px;
+
+border-radius:10px;
+
+border:none;
+
+}
+
+#sonuc{
+
+margin-top:15px;
+
+padding:15px;
+
+background:#333;
+
+border-radius:10px;
+
+display:none;
+
+}
+
 </style>
 
 </head>
 
 <body>
+
 <div class="kutu">
 
 <a href="#">Ana Sayfa</a> |
@@ -86,280 +98,49 @@ padding:10px;
 
 <a href="#">Elektrik</a>
 
-</div
+</div>
+
 <h1>🔧 Arıza Ustası</h1>
-  <div class="kutu">
+
+<div class="kutu">
 
 <h2>Hoş Geldin 👋</h2>
 
-<p>
-
-Arızanı yaz, belirti seç veya popüler sorunlardan birine dokun.
-
-</p>
+<p>Arızanı yaz veya aşağıdaki konulardan seç.</p>
 
 </div>
-  <h3>Türkiye'nin araç arıza çözüm rehberi</h3>
 
-<p>Her gün yeni çözümler ekleniyor 🚗🔧</p>
-<h3>Türkiye'nin araç ve arıza çözüm rehberi
-<p>Arızayı bul, çözümü öğren.</p>
+<input
 
-<div class="box">
+id="arama"
 
-<h3>Popüler Sorunlar</h3>
-<p>🚗 Marş basıyor tık tık sesi geliyor</p>
+placeholder="Örnek: akü"
 
-<p>🔋 Akü var ama araç çalışmıyor</p>
+onkeyup="ara()"
 
-<p>🚘 Dizel araç geç çalışıyor</p>
+/>
 
-<p>🛠️ AdBlue sorunu</p>
+<div id="sonuc"></div>
 
-<p>⚡ Jeneratör elektrik üretmiyor</p>
-<p>
-
-<a href="tik-tik-sesi.html" style="color:white;">
-
-🚗 Marş basıyor tık tık sesi geliyor
-
-</a>
-
-</p>
-
-<p>
-
-<a href="aku-calismiyor.html">
-
-🔋 Akü var ama araç çalışmıyor
-
-</a>
-
-</p>
-
-<p>⚡ Jeneratör elektrik üretmiyor</p>
-
-<p>
-
-<a href="adblue-sorunu.html">
-
-🛠️ AdBlue sorunu
-
-</a>
-
-</p>
-
-</div>
 <div class="kutu">
 
-<h2>Hızlı Çözüm</h2>
+<h3>Popüler Sorunlar</h3>
 
-<button onclick="cozum('aku')">
+<p><a href="tik-tik-sesi.html">🚗 Marş basıyor tık tık sesi</a></p>
 
-🔋 Akü Sorunu
+<p><a href="aku-calismiyor.html">🔋 Akü var araç çalışmıyor</a></p>
 
-</button>
+<p><a href="dizel-gec-calisiyor.html">🚘 Dizel araç geç çalışıyor</a></p>
 
-<button onclick="cozum('mars')">
-
-🚗 Marş Sorunu
-
-</button>
-
-<button onclick="cozum('jenerator')">
-
-⚡ Jeneratör
-
-</button>
+<p><a href="adblue-sorunu.html">🛠️ AdBlue sorunu</a></p>
 
 </div>
 
-<script>
-
-function cozum(tip){
-
-let sonuc=
-
-document.getElementById("sonuc");
-
-sonuc.style.display="block";
-
-if(tip=="aku"){
-
-sonuc.innerHTML=
-
-"🔋 Akü kutup başlarını kontrol et. Marş anında voltaj çok düşüyorsa akü zayıf olabilir.";
-
-}
-
-if(tip=="mars"){
-
-sonuc.innerHTML=
-
-"🚗 Tık tık sesi varsa marş rölesi veya akü kaynaklı olabilir.";
-
-}
-
-if(tip=="jenerator"){
-
-sonuc.innerHTML=
-
-"⚡ AVR, sigorta ve çıkış bağlantıları kontrol edilmeli.";
-
-}
-
-}
-
-</script>
-  <div class="kutu">
-
-<h2>Son Eklenen Arızalar</h2>
-    <p>⚠️ Motor arıza lambası neden yanar?</p>
-
-<p>🔥 Hararet neden yükselir?</p>
-
-<p>🔧 Şarj dinamosu bozuk belirtileri</p>
-<p>🚘 Dizel araç geç çalışıyor</p>
-
-<p>⚠️ Motor arıza lambası yandı</p>
-
-<p>🔥 Hararet neden yükseliyor?</p>
-
-<p>⚡ Şarj dinamosu bozuk belirtileri</p>
-<p>
-
-<a href="dizel-gec-calisiyor.html">
-
-🚘 Dizel araç geç çalışıyor
-
-</a>
-
-</p>
-
-<p>🔥 Hararet yükseliyor neden?</p>
-
-<p>⚠️ Motor arıza lambası yandı</p>
-
-<p>🔧 Şarj dinamosu bozuk belirtileri</p>
-
-</div
-  <div class="kutu">
-
-<h2>Hızlı Belirti Seç</h2>
-
-<select id="belirti" onchange="belirtiSec()">
-
-<option>Belirti seç</option>
-
-<option>Araç çalışmıyor</option>
-
-<option>Tık tık sesi geliyor</option>
-
-<option>Jeneratör çalışıyor üretmiyor</option>
-
-</select>
-
-</div>
-
-<script>
-
-function belirtiSec(){
-
-let secim=
-
-document.getElementById("belirti").value;
-
-let sonuc=
-
-document.getElementById("sonuc");
-
-sonuc.style.display="block";
-
-if(secim=="Araç çalışmıyor"){
-
-sonuc.innerHTML=
-
-"🚗 Akü, marş veya yakıt sistemi kontrol edilmeli.";
-
-}
-
-if(secim=="Tık tık sesi geliyor"){
-
-sonuc.innerHTML=
-
-"🔋 Akü zayıf olabilir veya marş rölesi arızalı olabilir.";
-
-}
-
-if(secim=="Jeneratör çalışıyor üretmiyor"){
-
-sonuc.innerHTML=
-
-"⚡ AVR, sigorta veya çıkış bağlantıları kontrol edilmeli.";
-
-}
-
-}
-
-</script>
-  <div class="kutu">
+<div class="kutu">
 
 <h2>📩 Arızanı Gönder</h2>
 
-<input
-
-type="text"
-
-placeholder="Arızanı yaz..."
-
-id="mesaj"
-
-/>
-
-<button onclick="gonder()">
-
-Gönder
-
-</button>
-
-</div>
-
-<script>
-
-function gonder(){
-
-let mesaj=
-
-document.getElementById("mesaj").value;
-
-let sonuc=
-
-document.getElementById("sonuc");
-
-sonuc.style.display="block";
-
-sonuc.innerHTML=
-
-"✅ Gönderildi: " + mesaj +
-
-"<br><br>Yakında detaylı çözüm sistemi eklenecek.";
-
-}
-
-</script>
-  <div class="kutu">
-
-<h2>📩 Bize Arızanı Gönder</h2>
-
-<input
-
-type="text"
-
-placeholder="Sorununu yaz..."
-
-id="sorun"
-
-/>
+<input id="sorun" placeholder="Sorununu yaz">
 
 <button onclick="mesajGonder()">
 
@@ -371,43 +152,46 @@ Gönder
 
 <script>
 
-function mesajGonder() {
+function ara(){
 
-let yazi = document.getElementById("sorun").value;
+let yazi=
 
-alert("Mesaj alındı: " + yazi);
+document.getElementById("arama")
+
+.value.toLowerCase();
+
+let sonuc=
+
+document.getElementById("sonuc");
+
+if(yazi.includes("akü")){
+
+sonuc.style.display="block";
+
+sonuc.innerHTML=
+
+"🔋 Akü bağlantıları ve voltaj kontrol edilmeli.";
+
+}else{
+
+sonuc.style.display="none";
+
+}
+
+}
+
+function mesajGonder(){
+
+let yazi=
+
+document.getElementById("sorun").value;
+
+alert("Mesaj alındı: "+yazi);
 
 }
 
 </script>
-  <div class="kutu">
 
-<h2>🔥 En Çok Arananlar</h2>
-
-<p>🚗 Marş basıyor tık tık sesi</p>
-
-<p>🔋 Akü var araç çalışmıyor</p>
-
-<p>🛠️ AdBlue sorunu</p>
-
-<p>🚘 Dizel araç geç çalışıyor</p>
-
-</div>
-  <div class="kutu">
-
-<h2>📂 Kategoriler</h2>
-
-<p>🚗 Araç Arızaları</p>
-
-<p>⚡ Jeneratör Sorunları</p>
-
-<p>🔋 Akü ve Marş Problemleri</p>
-
-<p>🔌 Elektrik Arızaları</p>
-
-<p>🛠️ Pratik Çözüm Rehberleri</p>
-
-</div>
 </body>
 
 </html>
