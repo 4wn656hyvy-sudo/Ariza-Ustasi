@@ -216,6 +216,51 @@ sonuc.innerHTML=
 }
 
 </script>
+  <div class="kutu">
+
+<h2>📩 Arızanı Gönder</h2>
+
+<input
+
+type="text"
+
+placeholder="Arızanı yaz..."
+
+id="mesaj"
+
+/>
+
+<button onclick="gonder()">
+
+Gönder
+
+</button>
+
+</div>
+
+<script>
+
+function gonder(){
+
+let mesaj=
+
+document.getElementById("mesaj").value;
+
+let sonuc=
+
+document.getElementById("sonuc");
+
+sonuc.style.display="block";
+
+sonuc.innerHTML=
+
+"✅ Gönderildi: " + mesaj +
+
+"<br><br>Yakında detaylı çözüm sistemi eklenecek.";
+
+}
+
+</script>
 </body>
 
 </html>
