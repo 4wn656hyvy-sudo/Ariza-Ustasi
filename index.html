@@ -7,7 +7,19 @@
 <title>Arıza Ustası</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+select{
 
+width:90%;
+
+padding:15px;
+
+border-radius:10px;
+
+font-size:18px;
+
+margin-top:15px;
+
+}
 <style>
 
 body{
@@ -145,6 +157,65 @@ sonuc.innerHTML=
 <p>🔧 Şarj dinamosu bozuk belirtileri</p>
 
 </div
+  <div class="kutu">
+
+<h2>Hızlı Belirti Seç</h2>
+
+<select id="belirti" onchange="belirtiSec()">
+
+<option>Belirti seç</option>
+
+<option>Araç çalışmıyor</option>
+
+<option>Tık tık sesi geliyor</option>
+
+<option>Jeneratör çalışıyor üretmiyor</option>
+
+</select>
+
+</div>
+
+<script>
+
+function belirtiSec(){
+
+let secim=
+
+document.getElementById("belirti").value;
+
+let sonuc=
+
+document.getElementById("sonuc");
+
+sonuc.style.display="block";
+
+if(secim=="Araç çalışmıyor"){
+
+sonuc.innerHTML=
+
+"🚗 Akü, marş veya yakıt sistemi kontrol edilmeli.";
+
+}
+
+if(secim=="Tık tık sesi geliyor"){
+
+sonuc.innerHTML=
+
+"🔋 Akü zayıf olabilir veya marş rölesi arızalı olabilir.";
+
+}
+
+if(secim=="Jeneratör çalışıyor üretmiyor"){
+
+sonuc.innerHTML=
+
+"⚡ AVR, sigorta veya çıkış bağlantıları kontrol edilmeli.";
+
+}
+
+}
+
+</script>
 </body>
 
 </html>
